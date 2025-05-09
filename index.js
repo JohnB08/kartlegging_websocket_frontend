@@ -5,7 +5,7 @@ const messageinput = document.querySelector("#typingInput");
 const sendBtn = document.querySelector("#sendMessage");
 const duckContainer = document.querySelector(".duckContainer");
 
-const apiUri = "https://unsafewebsockettest-a6dth4bxbmdshfdg.norwayeast-01.azurewebsites.net/"
+const apiUri = "http://localhost:5145"
 const apiUrl = new URL(apiUri);
 
 let generatedName = await getName();
@@ -30,12 +30,15 @@ sendBtn.addEventListener("click", sendMessage)
 
 window.addEventListener("keydown", (e)=>{
     if (e.key === "Enter") {
-        duckContainer.classList.remove("duckContainer");
-        duckContainer.classList.add("duckContainerActive");
+        console.log(duckContainer);
+        duckContainer.classList.toggle("duckContainer");
+        duckContainer.classList.toggle("duckContainerActive");
         sendMessage();
-        setTimeout(500);
-        duckContainer.classList.remove("duckContainerActive");
-        duckContainer.classList.add("duckContainer");
+        setTimeout(()=>{
+            duckContainer.classList.toggle("duckContainerActive");
+            duckContainer.classList.toggle("duckContainer");
+        }, 250);
+        
     }
 })
 
