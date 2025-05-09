@@ -5,7 +5,7 @@ const messageinput = document.querySelector("#typingInput");
 const sendBtn = document.querySelector("#sendMessage");
 const duckContainer = document.querySelector(".duckContainer");
 
-const apiUri = "unsafewebsockettest-a6dth4bxbmdshfdg.norwayeast-01.azurewebsites.net"
+const apiUri = "https://unsafewebsockettest-a6dth4bxbmdshfdg.norwayeast-01.azurewebsites.net"
 const apiUrl = new URL(apiUri);
 
 let generatedName = await getName();
