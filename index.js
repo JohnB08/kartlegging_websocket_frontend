@@ -43,9 +43,10 @@ window.addEventListener("keydown", (e)=>{
 })
 
 const writeToOuput = (message) => {
-    const messagePara = document.createElement("p");
-    messagePara.textContent = message;
-    chatArea.append(messagePara);
+    /* const messagePara = document.createElement("p");
+    messagePara.textContent = message; */
+
+    chatArea.insertAdjacentElement("afterbegin", `<p>${message}</p>`);
 }
 
 const sendOnSocket = (message) => {
